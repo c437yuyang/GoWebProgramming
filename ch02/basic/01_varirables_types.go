@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+    "errors"
+    "fmt"
+)
 
 func main() {
 
@@ -45,6 +48,13 @@ func main() {
                hello
                hi`
         fmt.Println(s3)
+    }
+
+    {
+        err := errors.New("test error")
+        if err != nil {
+            fmt.Println(err)
+        }
     }
 
     fmt.Println("hello world")
