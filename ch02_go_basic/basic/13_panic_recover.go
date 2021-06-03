@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "strings"
+)
 
 func testPanic(str string) {
     if str == "a" {
@@ -19,5 +22,10 @@ func testRecover() (bret bool) {
 }
 
 func main() {
-    fmt.Println(testRecover())
+    fmt.Println(testRecover()) // true
+
+    res := strings.Map(func(r rune) rune {
+        return r + 1
+    }, "HAL-9000")
+    fmt.Println(res)
 }
